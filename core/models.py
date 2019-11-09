@@ -13,3 +13,16 @@ class Servico(models.Model):
 
     def __str__(self):
         return self.title
+
+class Depoimento(models.Model):
+    name = models.CharField('Nome',max_length=60)
+    url = models.URLField('Link', max_length=300)
+    image = models.ImageField(upload_to='depoimentos/', verbose_name='Imagem')
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = 'Depoimento'
+        verbose_name_plural = 'Depoimentos'
+
+    def __str__(self):
+        return self.name
