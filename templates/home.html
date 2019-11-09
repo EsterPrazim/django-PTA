@@ -11,9 +11,17 @@
 <body>
     <h1>Treinamento Django</h1>
 
+    <h2>-- Serviços --</h2>
     {% for servico in servicos %}
-    <h2>{{ servico.title }}</h2>
+    <h3>{{ servico.title }}</h3>
     <p>{{ servico.text }}</p>
+    {% endfor %}
+
+    <h2>-- Depoimentos --</h2>
+    {% for depoimento in depoimentos %}
+    <h3>{{ depoimento.name }}</h3>
+    <p>{{ depoimento.url }}</p>
+    <img src="{{ depoimento.image.url }}" alt="imagem de uma pessoa"/>
     {% endfor %}
 
 </body>
