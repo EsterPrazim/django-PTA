@@ -17,7 +17,7 @@ class Servico(models.Model):
 class Depoimento(models.Model):
     name = models.CharField('Nome',max_length=60)
     url = models.URLField('Link', max_length=300)
-    image = models.ImageField(upload_to='depoimentos/', verbose_name='Imagem')
+    image = models.ImageField(upload_to='depoimentos/', verbose_name='Imagem', null=True, blank=True)
 
     class Meta:
         ordering = ['name']
