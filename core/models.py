@@ -1,4 +1,5 @@
 from django.db import models
+from solo.models import SingletonModel
 
 # Create your models here.
 class Servico(models.Model):
@@ -26,3 +27,13 @@ class Depoimento(models.Model):
 
     def __str__(self):
         return self.name
+
+class QuemSomos(SingletonModel):
+    aboutUs = models.TextField('Sobre nós', max_length=200)
+    description = models.TextField('Descrição', max_length=400)
+
+    class Meta:
+        verbose_name = 'Quem somos'
+
+    def __str__(self):
+        return "Quem somos"

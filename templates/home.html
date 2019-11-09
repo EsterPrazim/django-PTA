@@ -30,5 +30,13 @@
         {% endfor %}
     </section>
 
+    {% if quemsomos.aboutUs|length > 0 %}
+    <section>
+        <h2>-- Quem Somos --</h2>
+        <p>{{ quemsomos.aboutUs }}</p>
+        <p>{{ quemsomos.description }}</p>
+    </section>
+    {% endif %}
+
 </body>
 </html>

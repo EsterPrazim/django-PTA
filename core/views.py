@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 
-from .models import Servico, Depoimento
+from .models import Servico, Depoimento, QuemSomos
 
 # Create your views here.
 class HomeView(generic.TemplateView):
@@ -11,4 +11,5 @@ class HomeView(generic.TemplateView):
         context = super().get_context_data(**kwargs)
         context["servicos"] = Servico.objects.all()
         context["depoimentos"] = Depoimento.objects.all()
+        context["quemsomos"] = QuemSomos.objects.first()
         return context

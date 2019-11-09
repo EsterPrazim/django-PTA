@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Servico, Depoimento
+from .models import Servico, Depoimento, QuemSomos
+from solo.admin import SingletonModelAdmin
 
 # Register your models here.
 
@@ -8,3 +9,4 @@ class ServicoAdmin(admin.ModelAdmin):
 
 admin.site.register(Servico, ServicoAdmin)
 admin.site.register(Depoimento)
+admin.site.register(QuemSomos, SingletonModelAdmin)
