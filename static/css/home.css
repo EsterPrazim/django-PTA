@@ -2,3 +2,21 @@ body {
     background-color: #343332;
     color: #51E678;
 }
+
+section {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+img {
+    width: 150px;
+}

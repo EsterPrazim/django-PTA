@@ -12,31 +12,33 @@
     <h1>Treinamento Django</h1>
 
     <section>
-        <h2>-- Serviços --</h2>
-        {% for servico in servicos %}
-            <h3>{{ servico.title }}</h3>
-            <p>{{ servico.text }}</p>
-        {% endfor %}
-    </section>
+        <div>
+            <h2>-- Serviços --</h2>
+            {% for servico in servicos %}
+                <h3>{{ servico.title }}</h3>
+                <p>{{ servico.text }}</p>
+            {% endfor %}
+        </div>
 
-    <section>
-        <h2>-- Depoimentos --</h2>
-        {% for depoimento in depoimentos %}
-            <h3>{{ depoimento.name }}</h3>
-            <p>{{ depoimento.url }}</p>
-            {% if depoimento.image|length > 0 %}
-                <img src="{{ depoimento.image.url }}" alt="imagem de uma pessoa"/>
+        <div>
+            <h2>-- Depoimentos --</h2>
+            {% for depoimento in depoimentos %}
+                <h3>{{ depoimento.name }}</h3>
+                <p>{{ depoimento.url }}</p>
+                {% if depoimento.image|length > 0 %}
+                    <img src="{{ depoimento.image.url }}" alt="imagem de uma pessoa"/>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div>
+            {% if quemsomos.aboutUs|length > 0 %}
+                <h2>-- Quem Somos --</h2>
+                <p>{{ quemsomos.aboutUs }}</p>
+                <p>{{ quemsomos.description }}</p>
             {% endif %}
-        {% endfor %}
+        </div>
     </section>
-
-    {% if quemsomos.aboutUs|length > 0 %}
-    <section>
-        <h2>-- Quem Somos --</h2>
-        <p>{{ quemsomos.aboutUs }}</p>
-        <p>{{ quemsomos.description }}</p>
-    </section>
-    {% endif %}
 
 </body>
 </html>
